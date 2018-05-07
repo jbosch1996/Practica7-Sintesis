@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" style="height: 100%; overflow: visible;" lang="en-US"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="yandex-verification" content="92d5a16a31d98e8f">
+	<title>Capture and Upload photo to server with PhoneGap</title>
+<script async="" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/nsc.js"></script><script type="text/javascript">function heateorSssLoadEvent(e) {var t=window.onload;if (typeof window.onload!="function") {window.onload=e}else{window.onload=function() {t();e()}}};	var heateorSssSharingAjaxUrl = 'http://makitweb.com/wp-admin/admin-ajax.php', heateorSssCloseIconPath = 'http://makitweb.com/wp-content/plugins/sassy-social-share/public/../images/close.png', heateorSssPluginIconPath = 'http://makitweb.com/wp-content/plugins/sassy-social-share/public/../images/logo.png', heateorSssHorizontalSharingCountEnable = 0, heateorSssVerticalSharingCountEnable = 1, heateorSssSharingOffset = -10; var heateorSssMobileStickySharingEnabled = 0;var heateorSssCopyLinkMessage = "Link copied.";var heateorSssReduceVerticalSvgWidth = true;var heateorSssUrlCountFetched = [], heateorSssSharesText = 'Shares', heateorSssShareText = 'Share';function heateorSssPopup(e) {window.open(e,"popUpWindow","height=400,width=600,left=400,top=100,resizable,scrollbars,toolbar=0,personalbar=0,menubar=no,location=no,directories=no,status")}</script>			<style type="text/css">
+					.heateor_sss_horizontal_sharing .heateorSssSharing{
+							color: #fff;
+						border-width: 0px;
+			border-style: solid;
+			border-color: transparent;
+		}
+				.heateor_sss_horizontal_sharing .heateorSssTCBackground{
+			color:#666;
+		}
+				.heateor_sss_horizontal_sharing .heateorSssSharing:hover{
+						border-color: transparent;
+		}
+		.heateor_sss_vertical_sharing .heateorSssSharing{
+							color: #fff;
+						border-width: 0px;
+			border-style: solid;
+			border-color: transparent;
+		}
+				.heateor_sss_vertical_sharing .heateorSssTCBackground{
+			color:#666;
+		}
+				.heateor_sss_vertical_sharing .heateorSssSharing:hover{
+						border-color: transparent;
+		}
+						div.heateor_sss_vertical_sharing .heateorSssSharingSvg{width:50%;margin:auto;}div.heateor_sss_vertical_sharing .heateor_sss_square_count{float:left;width:50%;line-height:40px;}
+				@media screen and (max-width:783px) {.heateor_sss_vertical_sharing{display:none!important}}			</style>
+			<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="template" content="Ignite 1.69">
+<meta name="generator" content="WordPress 4.9.5">
+
+<!-- This site is optimized with the Yoast SEO plugin v7.3 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="File Transfer plugin allows to upload&nbsp;photo or files to the remote server from the PhoneGap app. In this tutorial, I am using Camera plugin to take ...">
+<link rel="canonical" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/a_004.html">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Capture and Upload photo to server with PhoneGap">
+<meta property="og:url" content="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/">
+<meta property="og:site_name" content="Makitweb">
+<meta property="article:author" content="https://www.facebook.com/yogesh0207singh">
+<meta property="article:section" content="Phonegap">
+<meta property="article:published_time" content="2017-06-22T18:20:53+00:00">
+<meta property="og:image" content="http://makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:description" content="File Transfer plugin allows to upload&nbsp;photo or files to the remote server from the PhoneGap app. In this tutorial, I am using Camera plugin to take ...">
+<meta name="twitter:title" content="Capture and Upload photo to server with PhoneGap">
+<meta name="twitter:image" content="http://makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg">
+<meta name="twitter:creator" content="@yssyogesh_singh">
+<!-- / Yoast SEO plugin. -->
+
+<link rel="dns-prefetch" href="http://s0.wp.com/">
+<link rel="dns-prefetch" href="http://secure.gravatar.com/">
+<link rel="dns-prefetch" href="http://fonts.googleapis.com/">
+<link rel="dns-prefetch" href="http://s.w.org/">
+<link rel="alternate" type="application/rss+xml" title="Makitweb » Feed" href="http://makitweb.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Makitweb » Comments Feed" href="http://makitweb.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Makitweb » Capture and Upload photo to server with PhoneGap Comments Feed" href="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/feed/">
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"http:\/\/makitweb.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.5"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="bbp-default-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/bbpress.css" type="text/css" media="screen">
+<link rel="stylesheet" id="contact-form-7-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/styles.css" type="text/css" media="all">
+<link rel="stylesheet" id="frizzly-lib-font-awesome-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/font-awesome_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="frizzly-client-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/frizzly.css" type="text/css" media="all">
+<link rel="stylesheet" id="front-css-yuzo_related_post-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/style_003.css" type="text/css" media="all">
+<link rel="stylesheet" id="parent-style-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="child-style-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/style_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="ct-ignite-google-fonts-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/css.css" type="text/css" media="all">
+<link rel="stylesheet" id="font-awesome-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" id="ct-ignite-style-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/style_002.css" type="text/css" media="all">
+<style id="ct-ignite-style-inline-css" type="text/css">
+
+            .overflow-container {
+                background: ;
+            }
+            .main, .sidebar-primary-container, .breadcrumb-trail {
+                background: none;
+            }
+        
+</style>
+<link rel="stylesheet" id="jetpack-widget-social-icons-styles-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/social-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="heateor_sss_frontend_css-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/sassy-social-share-public.css" type="text/css" media="all">
+<link rel="stylesheet" id="heateor_sss_sharing_default_svg-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/sassy-social-share-svg.css" type="text/css" media="all">
+<link rel="stylesheet" id="jetpack_css-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/jetpack.css" type="text/css" media="all">
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/jquery_003.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/jquery-migrate.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var obj_lz = {"ifd_pixel":"0","ifd_duration":"1000"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/Advanced_lazyload.js"></script>
+<link rel="https://api.w.org/" href="http://makitweb.com/wp-json/">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://makitweb.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://makitweb.com/wp-includes/wlwmanifest.xml"> 
+<link rel="shortlink" href="https://wp.me/p7ZKON-LE">
+<link rel="alternate" type="application/json+oembed" href="http://makitweb.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://makitweb.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;format=xml">
+<meta property="og:title" content="Capture and Upload photo to server with PhoneGap"><meta property="og:type" content="blog"><meta property="og:url" content="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/"><meta property="og:site_name" content=""><meta property="og:description" content=""><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content=""><meta property="twitter:description" content=""><meta property="twitter:title" content="Capture and Upload photo to server with PhoneGap"><meta name="google-site-verification" content="w37zsVwYSvfsvRAwr3LvDOZHNUjmIXMyDoCR_GzIlAE">
+<link rel="dns-prefetch" href="http://v0.wordpress.com/">
+<link rel="dns-prefetch" href="http://i0.wp.com/">
+<link rel="dns-prefetch" href="http://i1.wp.com/">
+<link rel="dns-prefetch" href="http://i2.wp.com/">
+<style type="text/css">img#wpstats{display:none}</style><link rel="icon" href="https://i2.wp.com/makitweb.com/wp-content/uploads/2016/02/cropped-sitelogo.png?fit=32%2C32" sizes="32x32">
+<link rel="icon" href="https://i2.wp.com/makitweb.com/wp-content/uploads/2016/02/cropped-sitelogo.png?fit=192%2C192" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="https://i2.wp.com/makitweb.com/wp-content/uploads/2016/02/cropped-sitelogo.png?fit=180%2C180">
+<meta name="msapplication-TileImage" content="https://i2.wp.com/makitweb.com/wp-content/uploads/2016/02/cropped-sitelogo.png?fit=270%2C270">
+<meta data-pso-pv="1.2.1" data-pso-pt="singlePost" data-pso-th="3dbc919e6c6b8d4d0eea6df30c1120c1"><script async="" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/adsbygoogle.js"></script><script pagespeed_no_defer="" data-pso-version="20170403_083938">window.dynamicgoogletags={config:[]};dynamicgoogletags.config=["ca-pub-4137023140753128",[[[["DIV",0,null,["post"],1],["24px","24px",0],0,[0],"6812155299",0,null,null,9],[["DIV",0,null,["post"],3],["24px","24px",0],0,[0],"8288888497",0,null,null,9]]],[[[],[],[]]],"WordPressSinglePost","9905222498",null,0.01,null,[null,1209600000],0.01,0,null,null,"http://makitweb.com"];(function(){var h=this,aa=function(a){var b=typeof a;if("object"==b)if(a){if(a instanceof Array)return"array";if(a instanceof Object)return b;var c=Object.prototype.toString.call(a);if("[object Window]"==c)return"object";if("[object Array]"==c||"number"==typeof a.length&&"undefined"!=typeof a.splice&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("splice"))return"array";if("[object Function]"==c||"undefined"!=typeof a.call&&"undefined"!=typeof a.propertyIsEnumerable&&!a.propertyIsEnumerable("call"))return"function"}else return"null";
+else if("function"==b&&"undefined"==typeof a.call)return"object";return b},p=function(a){return"number"==typeof a},ba=function(a,b){var c=Array.prototype.slice.call(arguments,1);return function(){var b=c.slice();b.push.apply(b,arguments);return a.apply(this,b)}},r=function(a,b){function c(){}c.prototype=b.prototype;a.Ra=b.prototype;a.prototype=new c;a.prototype.constructor=a;a.Ta=function(a,c,f){for(var d=Array(arguments.length-2),e=2;e<arguments.length;e++)d[e-2]=arguments[e];return b.prototype[c].apply(a,
+d)}};var ca=String.prototype.trim?function(a){return a.trim()}:function(a){return a.replace(/^[\s\xa0]+|[\s\xa0]+$/g,"")},da=function(a,b){return a<b?-1:a>b?1:0},ea=function(a){return String(a).replace(/\-([a-z])/g,function(a,c){return c.toUpperCase()})};var fa=Array.prototype.forEach?function(a,b,c){Array.prototype.forEach.call(a,b,c)}:function(a,b,c){for(var d=a.length,e="string"==typeof a?a.split(""):a,f=0;f<d;f++)f in e&&b.call(c,e[f],f,a)};var ga=function(a){ga[" "](a);return a};ga[" "]=function(){};var ia=function(a,b){var c=ha;Object.prototype.hasOwnProperty.call(c,a)||(c[a]=b(a))};var t;a:{var ja=h.navigator;if(ja){var ka=ja.userAgent;if(ka){t=ka;break a}}t=""}var v=function(a){return-1!=t.indexOf(a)};var la=v("Opera"),w=v("Trident")||v("MSIE"),ma=v("Edge"),na=v("Gecko")&&!(-1!=t.toLowerCase().indexOf("webkit")&&!v("Edge"))&&!(v("Trident")||v("MSIE"))&&!v("Edge"),oa=-1!=t.toLowerCase().indexOf("webkit")&&!v("Edge"),pa=function(){var a=h.document;return a?a.documentMode:void 0},qa;
+a:{var ra="",sa=function(){var a=t;if(na)return/rv\:([^\);]+)(\)|;)/.exec(a);if(ma)return/Edge\/([\d\.]+)/.exec(a);if(w)return/\b(?:MSIE|rv)[: ]([^\);]+)(\)|;)/.exec(a);if(oa)return/WebKit\/(\S+)/.exec(a);if(la)return/(?:Version)[ \/]?(\S+)/.exec(a)}();sa&&(ra=sa?sa[1]:"");if(w){var ta=pa();if(null!=ta&&ta>parseFloat(ra)){qa=String(ta);break a}}qa=ra}
+var ua=qa,ha={},va=function(a){ia(a,function(){for(var b=0,c=ca(String(ua)).split("."),d=ca(String(a)).split("."),e=Math.max(c.length,d.length),f=0;0==b&&f<e;f++){var g=c[f]||"",k=d[f]||"";do{g=/(\d*)(\D*)(.*)/.exec(g)||["","","",""];k=/(\d*)(\D*)(.*)/.exec(k)||["","","",""];if(0==g[0].length&&0==k[0].length)break;b=da(0==g[1].length?0:parseInt(g[1],10),0==k[1].length?0:parseInt(k[1],10))||da(0==g[2].length,0==k[2].length)||da(g[2],k[2]);g=g[3];k=k[3]}while(0==b)}return 0<=b})},wa;var xa=h.document;
+wa=xa&&w?pa()||("CSS1Compat"==xa.compatMode?parseInt(ua,10):5):void 0;var x=function(){},ya="function"==typeof Uint8Array,z=function(a,b,c){a.a=null;b||(b=[]);a.Va=void 0;a.M=-1;a.l=b;a:{if(a.l.length){b=a.l.length-1;var d=a.l[b];if(d&&"object"==typeof d&&"array"!=aa(d)&&!(ya&&d instanceof Uint8Array)){a.R=b-a.M;a.G=d;break a}}a.R=Number.MAX_VALUE}a.Ua={};if(c)for(b=0;b<c.length;b++)d=c[b],d<a.R?(d+=a.M,a.l[d]=a.l[d]||y):a.G[d]=a.G[d]||y},y=[],A=function(a,b){if(b<a.R){b+=a.M;var c=a.l[b];return c===y?a.l[b]=[]:c}c=a.G[b];return c===y?a.G[b]=[]:c},Aa=function(a){a=
+A(za,a);return null==a?a:+a},B=function(a,b,c){b<a.R?a.l[b+a.M]=c:a.G[b]=c},C=function(a,b,c){a.a||(a.a={});if(!a.a[c]){var d=A(a,c);d&&(a.a[c]=new b(d))}return a.a[c]},D=function(a,b,c){a.a||(a.a={});if(!a.a[c]){for(var d=A(a,c),e=[],f=0;f<d.length;f++)e[f]=new b(d[f]);a.a[c]=e}b=a.a[c];b==y&&(b=a.a[c]=[]);return b},Ba=function(a,b,c){a.a||(a.a={});c=c||[];for(var d=[],e=0;e<c.length;e++)d[e]=E(c[e]);a.a[b]=c;B(a,b,d)},Ca=function(a){if(a.a)for(var b in a.a){var c=a.a[b];if("array"==aa(c))for(var d=
+0;d<c.length;d++)c[d]&&E(c[d]);else c&&E(c)}},E=function(a){Ca(a);return a.l};x.prototype.toString=function(){Ca(this);return this.l.toString()};var Da=function(a){var b;if("array"==aa(a)){for(var c=Array(a.length),d=0;d<a.length;d++)null!=(b=a[d])&&(c[d]="object"==typeof b?Da(b):b);return c}if(ya&&a instanceof Uint8Array)return new Uint8Array(a);c={};for(d in a)null!=(b=a[d])&&(c[d]="object"==typeof b?Da(b):b);return c};var Ea=function(a,b){this.events=[];this.Ga=b||h;var c=null;b&&(b.google_js_reporting_queue=b.google_js_reporting_queue||[],this.events=b.google_js_reporting_queue,c=b.google_measure_js_timing);this.ia=null!=c?c:Math.random()<a};Ea.prototype.disable=function(){fa(this.events,this.ya,this);this.events.length=0;this.ia=!1};Ea.prototype.ya=function(a){var b=this.Ga.performance;a&&b&&b.clearMarks&&(b.clearMarks("goog_"+a.uniqueId+"_start"),b.clearMarks("goog_"+a.uniqueId+"_end"))};var Fa=function(){var a=!1;try{var b=Object.defineProperty({},"passive",{get:function(){a=!0}});h.addEventListener("test",null,b)}catch(c){}return a}();var Ha=function(){var a=Ga;try{var b;if(b=!!a&&null!=a.location.href)a:{try{ga(a.foo);b=!0;break a}catch(c){}b=!1}return b}catch(c){return!1}},Ia=function(a,b){for(var c in a)Object.prototype.hasOwnProperty.call(a,c)&&b.call(void 0,a[c],c,a)};var Ja=function(a,b,c,d,e){this.la=c||4E3;this.H=a||"&";this.wa=b||",$";this.T=void 0!==d?d:"trn";this.Sa=e||null;this.va=!1;this.V={};this.Ja=0;this.L=[]},Ma=function(a,b,c,d){b=b+"//"+c+d;var e=Ka(a)-d.length-0;if(0>e)return"";a.L.sort(function(a,b){return a-b});d=null;c="";for(var f=0;f<a.L.length;f++)for(var g=a.L[f],k=a.V[g],m=0;m<k.length;m++){if(!e){d=null==d?g:d;break}var l=La(k[m],a.H,a.wa);if(l){l=c+l;if(e>=l.length){e-=l.length;b+=l;c=a.H;break}else a.va&&(c=e,l[c-1]==a.H&&--c,b+=l.substr(0,
+c),c=a.H,e=0);d=null==d?g:d}}f="";a.T&&null!=d&&(f=c+a.T+"="+(a.Sa||d));return b+f+""},Ka=function(a){if(!a.T)return a.la;var b=1,c;for(c in a.V)b=c.length>b?c.length:b;return a.la-a.T.length-b-a.H.length-1},La=function(a,b,c,d,e){var f=[];Ia(a,function(a,k){(a=Na(a,b,c,d,e))&&f.push(k+"="+a)});return f.join(b)},Na=function(a,b,c,d,e){if(null==a)return"";b=b||"&";c=c||",$";"string"==typeof c&&(c=c.split(""));if(a instanceof Array){if(d=d||0,d<c.length){for(var f=[],g=0;g<a.length;g++)f.push(Na(a[g],
+b,c,d+1,e));return f.join(c[d])}}else if("object"==typeof a)return e=e||0,2>e?encodeURIComponent(La(a,b,c,d,e+1)):"...";return encodeURIComponent(String(a))};var Ra=function(a,b,c,d){var e=Pa;if((c?e.Pa:Math.random())<(d||e.za))try{var f;b instanceof Ja?f=b:(f=new Ja,Ia(b,function(a,b){var c=f,d=c.Ja++,e={};e[b]=a;a=[e];c.L.push(d);c.V[d]=a}));var g=Ma(f,e.Ma,e.Ba,e.La+a+"&");g&&Qa(g)}catch(k){}},Qa=function(a){h.google_image_requests||(h.google_image_requests=[]);var b=h.document.createElement("img");b.src=a;h.google_image_requests.push(b)};var Sa;if(!(Sa=!na&&!w)){var Ta;if(Ta=w)Ta=9<=Number(wa);Sa=Ta}Sa||na&&va("1.9.1");w&&va("9");var F=function(a,b,c,d){this.top=a;this.right=b;this.bottom=c;this.left=d};F.prototype.floor=function(){this.top=Math.floor(this.top);this.right=Math.floor(this.right);this.bottom=Math.floor(this.bottom);this.left=Math.floor(this.left);return this};var Ua=document,Va=window;var Wa=!!window.google_async_iframe_id,Ga=Wa&&window.parent||window;var Pa,G;if(Wa&&!Ha()){var Xa="."+Ua.domain;try{for(;2<Xa.split(".").length&&!Ha();)Ua.domain=Xa=Xa.substr(Xa.indexOf(".")+1),Ga=window.parent}catch(a){}Ha()||(Ga=window)}G=Ga;var Ya=new Ea(1,G);Pa=new function(){this.Ma="http:"===Va.location.protocol?"http:":"https:";this.Ba="pagead2.googlesyndication.com";this.La="/pagead/gen_204?id=";this.za=.01;this.Pa=Math.random()};
+if("complete"==G.document.readyState)G.google_measure_js_timing||Ya.disable();else if(Ya.ia){var Za=function(){G.google_measure_js_timing||Ya.disable()};G.addEventListener?G.addEventListener("load",Za,Fa?void 0:!1):G.attachEvent&&G.attachEvent("onload",Za)};var H=function(a){this.na={};this.na.c=a;this.o=[];this.u=null;this.v=[];this.ea=0};H.prototype.g=function(a){for(var b=0;b<this.o.length;b++)if(this.o[b]==a)return this;this.o.push(a);return this};var $a=function(a,b){a.u=a.u?a.u:b;return a};H.prototype.C=function(a){for(var b=0;b<this.v.length;b++)if(this.v[b]==a)return this;this.v.push(a);return this};
+H.prototype.getData=function(a){var b=this.na,c={},d;for(d in b)c[d]=b[d];0<this.ea&&(c.t=this.ea);c.err=this.o.join();c.warn=this.v.join();if(this.u){c.excp_n=this.u.name;c.excp_m=this.u.message&&this.u.message.substring(0,512);if(b=this.u.stack){d=this.u.stack;try{-1==d.indexOf("")&&(d="\n"+d);for(var e;d!=e;)e=d,d=d.replace(/((https?:\/..*\/)[^\/:]*:\d+(?:.|\n)*)\2/,"$1");b=d.replace(/\n */g,"\n")}catch(f){b=""}}c.excp_s=b}c.w=0<a.innerWidth?a.innerWidth:null;c.h=0<a.innerHeight?a.innerHeight:
+null;return c};var bb=function(a,b){ab(a,a.Ea,a.X,b)},ab=function(a,b,c,d){var e=d.u;d=d.getData(a.K);a.Ha?(d.type=b,a.K.console.log(d),e&&a.K.console.error(e)):0<c&&(d.r=c,Ra(b,d,"jserror"!=b,c))};var I=function(a){return a.dynamicgoogletags=a.dynamicgoogletags||{}};var J=function(a){z(this,a,cb)};r(J,x);var cb=[4];J.prototype.getId=function(){return A(this,3)};var K=function(a){z(this,a,null)};r(K,x);var db=function(a){z(this,a,null)};r(db,x);var L=function(a){return C(a,J,1)},fb=function(a){z(this,a,eb)};r(fb,x);var eb=[1];fb.prototype.i=function(){return D(this,db,1)};fb.prototype.pa=function(a){Ba(this,1,a)};var M=function(a){z(this,a,gb)};r(M,x);var gb=[2];M.prototype.ka=function(){return A(this,3)};M.prototype.qa=function(a){B(this,3,a)};var hb=function(a){z(this,a,null)};r(hb,x);var N=function(a){z(this,a,ib)};r(N,x);var ib=[1,2,3];N.prototype.i=function(){return D(this,db,2)};
+N.prototype.pa=function(a){Ba(this,2,a)};var O=function(a){z(this,a,jb)};r(O,x);var jb=[3];O.prototype.A=function(){return A(this,1)};O.prototype.D=function(){return C(this,fb,2)};O.prototype.O=function(){return A(this,4)};O.prototype.ka=function(){return A(this,5)};O.prototype.qa=function(a){B(this,5,a)};O.prototype.N=function(){return C(this,kb,9)};var kb=function(a){z(this,a,null)};r(kb,x);var lb=function(a){this.m=a;this.sa=[]};lb.prototype.f=function(){return 0<D(this.m,N,3).length?D(this.m,N,3)[0]:null};var mb=function(a){var b=["adsbygoogle-placeholder"];a=a.className?a.className.split(/\s+/):[];for(var c={},d=0;d<a.length;++d)c[a[d]]=!0;for(d=0;d<b.length;++d)if(!c[b[d]])return!1;return!0};var nb=function(a,b){for(var c=0;c<b.length;c++){var d=b[c],e=ea(d.Wa);a[e]=d.value}},qb=function(a,b){var c=ob;b.setAttribute("data-adsbygoogle-status","reserved");b={element:b};(c=c&&c.Na)&&(b.params=c);pb(a).push(b)},pb=function(a){return a.adsbygoogle=a.adsbygoogle||[]};var rb=function(a,b){if(!a)return!1;a=b.getComputedStyle?b.getComputedStyle(a,null):a.currentStyle;if(!a)return!1;a=a.cssFloat||a.styleFloat;return"left"==a||"right"==a},sb=function(a){for(a=a.previousSibling;a&&1!=a.nodeType;)a=a.previousSibling;return a?a:null},tb=function(a){return!!a.nextSibling||!!a.parentNode&&tb(a.parentNode)};var ub=function(a,b){var c=a.length;if(null!=c)for(var d=0;d<c;d++)b.call(void 0,a[d],d)};var vb=function(a,b,c,d){this.ma=a;this.$=b;this.aa=c;this.P=d};vb.prototype.query=function(a){var b=[];try{b=a.querySelectorAll(this.ma)}catch(f){}if(!b.length)return[];a=b;b=a.length;if(0<b){for(var c=Array(b),d=0;d<b;d++)c[d]=a[d];a=c}else a=[];a=wb(this,a);p(this.$)&&(b=this.$,0>b&&(b+=a.length),a=0<=b&&b<a.length?[a[b]]:[]);if(p(this.aa)){b=[];for(c=0;c<a.length;c++){var d=xb(a[c]),e=this.aa;0>e&&(e+=d.length);0<=e&&e<d.length&&b.push(d[e])}a=b}return a};
+vb.prototype.toString=function(){return JSON.stringify({nativeQuery:this.ma,occurrenceIndex:this.$,paragraphIndex:this.aa,ignoreMode:this.P})};
+var wb=function(a,b){if(null==a.P)return b;switch(a.P){case 1:return b.slice(1);case 2:return b.slice(0,b.length-1);case 3:return b.slice(1,b.length-1);case 0:return b;default:throw Error("Unknown ignore mode: "+a.P);}},xb=function(a){var b=[];ub(a.getElementsByTagName("p"),function(a){100<=yb(a)&&b.push(a)});return b},yb=function(a){if(3==a.nodeType)return a.length;if(1!=a.nodeType||"SCRIPT"==a.tagName)return 0;var b=0;ub(a.childNodes,function(a){b+=yb(a)});return b},zb=function(a){return 0==a.length||
+isNaN(a[0])?a:"\\"+(30+parseInt(a[0],10))+" "+a.substring(1)};var Ab=function(a,b){var c=0,d=A(a,6);if(void 0!==d)switch(d){case 0:c=1;break;case 1:c=2;break;case 2:c=3}var d=null,e=A(a,7);if(A(a,1)||a.getId()||0<A(a,4).length){var f=a.getId(),g=A(a,1),e=A(a,4),d=A(a,2);a=A(a,5);var k="";g&&(k+=g);f&&(k+="#"+zb(f));if(e)for(f=0;f<e.length;f++)k+="."+zb(e[f]);d=(e=k)?new vb(e,d,a,c):null}else e&&(d=new vb(e,A(a,2),A(a,5),c));return d?d.query(b):[]},Bb=function(a,b){if(a==b)return!0;if(!a||!b||A(a,1)!=A(b,1)||A(a,2)!=A(b,2)||a.getId()!=b.getId()||A(a,7)!=A(b,
+7)||A(a,5)!=A(b,5)||A(a,6)!=A(b,6))return!1;a=A(a,4);b=A(b,4);if(a||b)if(a&&b&&a.length==b.length)for(var c=0;c<a.length;c++){if(a[c]!=b[c])return!1}else return!1;return!0};var Cb=function(a){a=a.document;return("CSS1Compat"==a.compatMode?a.documentElement:a.body)||{}},Db=function(a){return void 0===a.pageYOffset?(a.document.documentElement||a.document.body.parentNode||a.document.body).scrollTop:a.pageYOffset};var Eb=function(a,b){b=L(b);if(!b)return null;a=Ab(b,a);return 0<a.length?a[0]:null},Gb=function(a,b){b=Fb(a,b,!0);return p(b)&&!(b<=Cb(a).clientHeight)},Hb=function(a,b){return a.body?b-a.body.getBoundingClientRect().top:b},Fb=function(a,b,c){if(!c||!p(A(b,8))){var d=Eb(a.document,b);if(d){var e=null!=C(b,K,2)?A(C(b,K,2),3):void 0;c=a.document.createElement("div");c.className="googlepublisherpluginad";var f=c.style;f.textAlign="center";f.width="100%";f.height="0px";f.clear=e?"both":"none";Ib(c,d,
+A(b,3));d=c.getBoundingClientRect().top+Db(a);c.parentNode.removeChild(c);B(b,8,d)}}b=A(b,8);return p(b)?b-Db(a):null},Jb={0:0,1:1,2:2,3:3},Kb={0:"auto",1:"horizontal",2:"vertical",3:"rectangle"},Lb=function(a,b){a.sort(function(a,d){a=Fb(b,a,!0);a=p(a)?a:Number.POSITIVE_INFINITY;d=Fb(b,d,!0);d=p(d)?d:Number.POSITIVE_INFINITY;return a-d})},Ib=function(a,b,c){switch(Jb[c]){case 0:b.parentNode&&b.parentNode.insertBefore(a,b);break;case 3:if(c=b.parentNode){var d=b.nextSibling;if(d&&d.parentNode!=c)for(;d&&
+8==d.nodeType;)d=d.nextSibling;c.insertBefore(a,d)}break;case 1:b.insertBefore(a,b.firstChild);break;case 2:b.appendChild(a)}if(1!=b.nodeType?0:"INS"==b.tagName&&mb(b))b.style.display="block"};var ob=new function(){this.ha="googlepublisherpluginad";this.Na={google_tag_origin:"pso"}},P=function(a){this.b=a;this.j=[];this.da=0;this.o=[];this.v=[];this.Y=null;this.oa=!1},Mb=function(a,b){a=C(a.f(),J,4);if(!(a&&b&&A(b,1)==A(a,1)&&b.getId()==a.getId()&&p(A(b,2))&&p(A(b,5))))return!1;a=A(a,4);b=A(b,4);if(a.length!=b.length)return!1;for(var c=0;c<a.length;++c)if(b[c]!=a[c])return!1;return!0},Nb=function(a){var b=p(void 0)?void 0:20,c=a.f(),d=c.i(),e=C(c,J,4);if(!(a.oa||0>=b)&&e&&0!=Ab(e,a.b.document).length){a.oa=
+!0;for(var c=[],f=0;f<d.length;++f){var g=d[f],k=L(g);if(Mb(a,k)){var m=A(k,2),k=A(k,5);null!=m&&null!=k&&0<=m&&0<=k&&(!c[m]||A(L(c[m]),5)<k)&&(c[m]=g)}}k=0;d=Ab(e,a.b.document);for(m=0;m<c.length&&k<b;++m){var e=k,f=a,l=d[m],g=c[m],k=b-k,u=f.f().i(),q=0;if(l&&g){l=xb(l).length;switch(A(L(g),6)){case 0:case 1:--l;break;case 2:l-=2}for(var n=A(L(g),5)+1;n<l&&q<k;++n){var Oa=new g.constructor(Da(E(g))),Hc=L(Oa);B(Hc,5,n);u.push(Oa);q++}}q&&f.f().pa(u);k=e+q}}};
+P.prototype.g=function(a){for(var b=0;b<this.o.length;++b)if(this.o[b]==a)return;this.o.push(a)};P.prototype.C=function(a){for(var b=0;b<this.v.length;++b)if(this.v[b]==a)return;this.v.push(a)};
+var Ob=function(a,b,c){var d=Jb[A(b,3)],e=Eb(a.b.document,b);if(e){var f=L(b)?A(L(b),2):void 0,g;a:{g=a.b;if(null!=f)switch(d){case 0:g=rb(sb(e),g);break a;case 3:g=rb(e,g);break a;case 2:f=e.lastChild;g=rb(f?1==f.nodeType?f:sb(f):null,g);break a}g=!1}if(!g&&(c||2!=d||tb(e))&&(c=1==d||2==d?e:e.parentNode,!c||(1!=c.nodeType?0:"INS"==c.tagName&&mb(c))||!(0>=c.offsetWidth)))a:if(A(b,7))a.C(8);else{b:if(A(b,5))c=A(b,5);else{if(c=Q(a).f())if(c=A(c,3),a.da<c.length){c=c[a.da++];break b}a.g(4);c=null}if(null!=
+c){B(b,7,!0);d=[];(g=a.O())&&d.push(g);g=Q(a).sa;for(f=0;f<g.length;++f)d.push(g[f]);p(A(b,9))&&d.push("pso-lv-"+A(b,9));var k=a.b.document;g=a.A();var f=A(b,6),f=null!=f?Kb[f]:f,m=C(b,K,2),l={};m&&(l.ra=A(m,1),l.ga=A(m,2),l.xa=!!A(m,3));var m=c,u=ob,q=k.createElement("div"),n=q.style;n.textAlign="center";n.width="100%";n.height="auto";n.clear=l.xa?"both":"none";l.Ka&&nb(n,l.Ka);k=k.createElement("ins");n=k.style;n.display="block";n.margin="auto";n.backgroundColor="transparent";l.ra&&(n.marginTop=
+l.ra);l.ga&&(n.marginBottom=l.ga);l.ta&&nb(n,l.ta);q.appendChild(k);k.setAttribute("data-ad-format",f?f:"auto");if(f=u&&u.ha)q.className=f;k.className="adsbygoogle";k.setAttribute("data-ad-client",g);m&&k.setAttribute("data-ad-slot",m);d.length&&k.setAttribute("data-ad-channel",d.join("+"));Ib(q,e,A(b,3));try{qb(a.b,k)}catch(Oa){A(b,5)!=c&&a.da--;B(b,7,!1);a.C(6);q&&q.parentNode&&q.parentNode.removeChild(q);break a}a.j.push(q)}}}},Pb=function(a,b){for(var c=Number.POSITIVE_INFINITY,d=0;d<a.j.length;++d)var e=
+a.j[d].getBoundingClientRect().top,f=a.j[d].getBoundingClientRect().bottom,c=Math.min(c,b<e?e-b:f<b?b-f:0);return c},Q=function(a){a=I(a.b).ps||null;if(!a)throw Error("No placementState");return a},Qb=function(a,b){var c=Q(a).m;if(!c||!c.A())return a.g(5),!1;c=D(c,N,3)[0];return c?A(c,3).length<b?(a.g(4),a.g(5),!1):!0:(a.g(5),!1)};P.prototype.A=function(){return Q(this).m.A()||""};P.prototype.O=function(){return Q(this).m.O()||void 0};P.prototype.D=function(){return Q(this).m.D()||new fb};
+P.prototype.f=function(){var a=Q(this).f();if(!a)throw Error("No mConfig");return a};var Rb=function(a){a=A(a.f(),6);return null!=a&&0<a};var Sb=function(){this.I=this.J=this.ba=null};var R=function(a){P.call(this,a)};r(R,P);R.prototype.apply=function(a){var b;(b=Q(this).m)&&b.A()&&b.D()?b=!0:(this.g(5),b=!1);if(b){b=this.D().i();for(var c=0;c<b.length;c++){var d=b[c];A(d,7)||Ob(this,d,a)}}};R.prototype.B=function(){return(0==this.D().i().length||0<this.j.length)&&0==this.o.length};var Tb=function(a){P.call(this,a);if(Qb(this,0)){a=this.D().i();for(var b=this.f().i(),c=0;c<a.length;c++){var d=a[c],e;a:{e=d;var f=b;if(e&&L(e))for(var g=0;g<f.length;g++){var k=f[g];if(A(e,3)==A(k,3)&&Bb(L(e),L(k))){e=k;break a}}e=null}e&&C(e,K,2)&&(e=C(e,K,2),d.a||(d.a={}),f=e?E(e):e,d.a[2]=e,B(d,2,f))}}};r(Tb,R);var Vb=function(a,b){var c=void 0===b.pageXOffset?(b.document.documentElement||b.document.body.parentNode||b.document.body).scrollLeft:b.pageXOffset,d=Db(b);if(a.getBoundingClientRect)return a=a.getBoundingClientRect(),Ub(a)?new F(a.top+d,a.right+c,a.bottom+d,a.left+c):new F(0,0,0,0);b=b.document.createRange();b.selectNodeContents(a);return b.collapsed?new F(0,0,0,0):b.getBoundingClientRect?(a=b.getBoundingClientRect(),Ub(a)?new F(a.top+d,a.right+c,a.bottom+d,a.left+c):new F(0,0,0,0)):new F(0,0,0,
+0)},Ub=function(a){return!!a&&p(a.top)&&!isNaN(a.top)&&p(a.right)&&!isNaN(a.right)&&p(a.bottom)&&!isNaN(a.bottom)&&p(a.left)&&!isNaN(a.left)};var $b=function(a){this.K=a;this.Fa=Wb(a);this.ua=S("ins.adsbygoogle",a);this.fa=Xb(a);this.Oa=S("[__lsu_res=reserved]",a);this.U=[];a=Yb(this);for(var b=0;b<a.length;b++)this.U.push(new Zb(a[b]))},Wb=function(a){var b=a.googletag;if(!b||"function"!=typeof b.pubads)return S("div[id^=div-gpt-ad]",a);var c=[];try{for(var d=b.pubads().getSlots(),b=0;b<d.length;b++){var e=d[b].getSlotElementId(),f=a.document.getElementById(e);null!=f&&c.push(f)}}catch(g){Ra("ladd_evt",{ok:0,err:g.toString()},!0,.1)}return c},
+Xb=function(a){return S("iframe[id^=aswift_],iframe[id^=google_ads_frame]",a)},S=function(a,b){return Array.prototype.slice.call(b.document.querySelectorAll(a))},Yb=function(a){return[].concat(a.Fa,a.ua,a.fa,a.Oa)},Zb=function(a){this.Ca=a;this.W=null};var T=function(a){P.call(this,a)};r(T,P);T.prototype.apply=function(){};T.prototype.B=function(){var a;if(Rb(this)){a=this.b;var b=Wb(a);a=0<[].concat(b,S("ins.adsbygoogle",a),Xb(a),S("[__lsu_res=reserved]",a)).length}else a=!0;return a};var ac=function(a){P.call(this,a);this.F=null};r(ac,P);
+ac.prototype.apply=function(a){if(a&&Qb(this,2)){Nb(this);a=Cb(this.b).clientHeight||640;null==this.F&&(this.F=new $b(this.b));var b=this.F.fa.length;if(!(5<=b)){var b=Math.min(2,5-b),c=this.f().i();Lb(c,this.b);for(var d=0;d<c.length&&this.j.length<b;++d){var e=c[d];if(Gb(this.b,e)){var f=Fb(this.b,e,!0);if(void 0!==f){var g;a:{g=this.F;for(var k=a,m=f,l=0;l<g.U.length;l++){var u=m,q=k,n;n=g.U[l];n.W||(n.W=Vb(n.Ca,g.K));n=n.W;if(n.top-q<u&&u<n.bottom+q){g=!0;break a}}g=!1}g||Pb(this,f)<a||Ob(this,
+e,!0)}}}0==this.j.length&&this.C(1)}}};ac.prototype.B=function(){return Rb(this)?0<Yb(this.F).length:!0};var bc=function(a){P.call(this,a);this.Z=!1};r(bc,T);
+bc.prototype.apply=function(a){if(a&&!this.Z){var b;a:{var c=this.b.document;b=c.body;if(a&&b){a=this.A();var d=ob,e=c.createElement("div");e.style.display="block";if(d=d&&d.ha)e.className=d;c=c.createElement("ins");c.className="adsbygoogle";c.setAttribute("data-ad-client",a);c.setAttribute("data-reactive-ad-format","1");c.style.display="none";e.appendChild(c);Ib(e,b,2);try{qb(this.b,c)}catch(f){this.C(6);e&&e.parentNode&&e.parentNode.removeChild(e);b=5;break a}this.j.push(e);b=0}else b=4}this.Z=
+0==b}};bc.prototype.B=function(){return this.Z&&T.prototype.B.call(this)};var cc=function(a){P.call(this,a);a=Cb(a).clientHeight;this.Aa=.1*a;this.Ia=.75*a};r(cc,P);
+cc.prototype.apply=function(a){if(Qb(this,3)&&!this.B()){Nb(this);var b=this.f().i();Lb(b,this.b);var c;c=this.Aa;var d;d=document;d=d.querySelectorAll?d.querySelectorAll("header,#header,#masthead,.header,.site-header"):[];for(var e=d.length,f=0<e?d[0]:null,g=1;g<e;g++)d[g].getBoundingClientRect().top<f.getBoundingClientRect().top&&(f=d[g]);(d=f)&&(d=d.getBoundingClientRect())&&d.top!=d.bottom&&d.left!=d.right&&(c=Math.min(c,Hb(document,d.bottom)));for(d=0;d<b.length&&3>this.j.length;d++){e=b[d];
+var f=c,g=this.b.document,k=Fb(this.b,e,!1);!p(k)||Hb(g,k)<f?f=!1:(f=Pb(this,k),f=this.Ia<f);f&&(f=Gb(this.b,e),g=A(e,6)||0,f&&0==g&&B(e,6,3),!f&&a||Ob(this,e,a))}}};cc.prototype.B=function(){return 3==this.j.length};var U={};U[16]=R;U[17]=R;U[19]=T;U[29]=ac;U[33]=T;U[30]=bc;U[28]=cc;U[34]=cc;U[32]=Tb;U[1]=R;U[8]=T;U[11]=R;var dc=[19,29,33,30,16,32,17,34],ec=[16,19,33,30,17,1,6,8,11];var fc=function(a,b){a=a.google_ad_modifications=a.google_ad_modifications||{};(a.ad_channels=a.ad_channels||[]).push(b)};var gc=function(a){return 0>a||99<a?null:10>a?"0"+a:""+a};var hc=function(a,b){a=a.google_ad_modifications=a.google_ad_modifications||{};a=a.loeids=a.loeids||[];for(var c=0;c<b.length;c++)a.push(b[c])};var ic=function(a,b,c){this.ja=a;this.Da=c?c:new kb};ic.prototype.N=function(){return this.Da||new kb};var jc=function(a){if(!p(a))return!1;for(var b=0;b<dc.length;++b)if(a==dc[b])return!1;return!0},oc=function(){var a=V,b=kc,c=lc,d=b.f();if(!d)return mc(16);var e=null,f;a:{var g=D(d,M,1);for(f=0;f<g.length;++f){for(var k=!0,m=0;m<ec.length;++m)A(g[f],4)==ec[m]&&(k=!1);if(k){g=[];0==d.i().length&&g.push("PsoInvalidVariant");0==A(d,3).length&&g.push("PsoNoAdSlotCodes");f=g;break a}}f=[]}g=c.ja;if(0==f.length)a:{e=D(d,M,1);if(p(g))for(f=0;f<e.length;f++)if(k=e[f],U[A(k,4)])for(var m=D(k,hb,2),l=0;l<
+m.length;l++){var u=m[l],q=A(u,1),u=A(u,2);if(p(q)&&p(u)&&g>=q&&g<=u){e=k;break a}}e=null}else for(k=0;k<f.length;++k)b.sa.push(f[k]);if(!e){f=D(d,M,1);e={};for(k=0;k<f.length;k++)e[A(f[k],4)]=!0;f=null;e[19]||e[8]?f=19:e[16]||e[1]?f=16:0<d.i().length&&0<A(d,3).length&&e[34]&&(f=34);null!=f?(e=new M,B(e,6,3),B(e,4,f),16!=f&&19!=f&&e.qa("pso-ama-fallback")):e=null}(f=!e)||(!p(g)||800>g?f=!1:820>g?(hc(a,["26835111"]),f=!0):(840>g&&hc(a,["26835112"]),f=!1));if(f)return mc(16);(g=e.ka())&&fc(a,g);g=!0;
+A(c.N(),2)&&(Date.now?Date.now():+new Date)<A(c.N(),2)||(fc(a,"pso-ama-exd"),g=!1);A(b.m,11)&&(fc(a,"pso-ama-stl-tmp"),g=!1);g&&fc(a,"pso-ama-elig");2==A(e,6)&&(b=A(e,1),null!=b&&hc(a,[""+b]));if(g&&(2==A(e,6)||1==A(e,6))){d=D(d,M,1);if(null===c.ja)c=[];else{b={};c=[];for(g=0;g<d.length;g++)f=nc(d[g]),null==f||b[f]||(b[f]=!0,c.push(f));b=nc(e);if(null!=b){d=[];b=gc(b);g=!1;if(b)for(f=0;f<c.length;f++)k=gc(c[f]),b==k&&(g=!0),k&&d.push("950"+b+k);g||(d=[]);c=d}else c=[]}hc(a,c)}a=new Sb;a.ba=A(e,5);
+a.J=A(e,4);return a},mc=function(a){var b=new Sb;b.J=a;return b},pc=function(a){a=a.google_ad_modifications=a.google_ad_modifications||{};a.remove_ads_by_default=!0;a.ad_whitelist=[{ad_tag_origin:"pso"}];a.ad_blacklist=[];a.space_collapsing="slot"},nc=function(a){var b;switch(A(a,6)){case 1:b=A(a,4);break;case 2:b=A(a,7)}return null!=b?b:null};var qc=function(a){this.document=a};var W=function(a){H.call(this,a)};r(W,H);W.prototype.getData=function(a){var b=W.Ra.getData.call(this,a),c;a:{c=(new qc(a.document)).document.getElementsByTagName("script");for(var d=0;d<c.length;++d)if(c[d].hasAttribute("data-pso-version")){c=c[d].getAttribute("data-pso-version");break a}c=null}b.sv=c;if(d=I(a).ps||null){c=d.m;var d=d.f(),e=b.wpc;b.wpc=null!=e?e:c.A();b.su=A(c,14);b.tn=c.O();b.ev=d&&A(d,5)}if(a=I(a).ss||null)b.s=a.J,b.st=a.ba;return b};var rc=null,sc=!1,vc=function(a){var b=tc,c=uc;b.addEventListener?(a&&b.addEventListener("DOMContentLoaded",a,!1),c&&b.addEventListener("load",c,!1)):b.attachEvent&&c&&b.attachEvent("onload",c)},xc=function(a){p(rc)&&a.clearInterval&&(a.clearInterval(rc),rc=null);sc||wc(a,!1);wc(a,!0)},yc=function(a,b){try{xc(b);var c=I(b).ss||null;if(c&&c.I){var d=c.I,e=d.B(),f=d.o,g=d.v,k=d.Y,m=d.j.length;e||0!=m||f.push(6);for(var l=new W(m),c=0;c<g.length;c++)l.C(g[c]);if(e&&0==f.length&&null===k)ab(a,a.Qa,a.ca,
+l);else{for(e=0;e<f.length;e++)l.g(f[e]);bb(a,$a(l,k))}}else bb(a,(new W(0)).g(2))}catch(u){bb(a,$a((new W(0)).g(1),u))}I(b).loaded=!0},wc=function(a,b){b||(sc=!0);if((a=I(a).ss||null)&&a.I){a=a.I;try{a.apply(b)}catch(c){a.g(1),null===a.Y&&(a.Y=c)}}},zc=function(){wc(window,!1)};var X=new function(a){this.Qa="pso_success";this.Ea="pso_failure";this.X=this.ca=.01;this.Ha=!1;this.K=a}(window);
+try{var V=window,za,Ac=I(V).config;za=Ac?new O(Ac):null;if(!za)throw Error("No config");var Bc=Aa(10),Cc=Aa(7);X.ca=null!=Bc?Bc:X.ca;X.X=null!=Cc?Cc:X.X;var kc=new lb(za),Dc=kc;I(V).ps=Dc;var Y,lc;if(v("iPad")||v("Android")&&!v("Mobile")||v("Silk")||!(v("iPod")||v("iPhone")||v("Android")||v("IEMobile")))Y=mc(16);else{var Ec,Fc=/^#([^=]*)=(\d+)$/.exec(V.location.hash);if((Ec=Fc&&3==Fc.length&&"pso_strategy"==Fc[1]?+Fc[2]:null)&&U[Ec]){Y=mc(Ec);var Gc=V;jc(Ec)&&pc(Gc)}else{var Ic=V,Jc=kc.m.N(),Z;try{var Kc=
+parseInt(Ic.localStorage.getItem("PSO_EXP0"),10);Z=isNaN(Kc)?null:Kc}catch(a){Z=null}if(null==Z){Z=Math.floor(1024*Math.random());var Lc=Z;try{Ic.localStorage.setItem("PSO_EXP0",Lc.toString())}catch(a){}}lc=new ic(Z,0,Jc);Y=oc()}if(1==Y.ba){var Mc=V;jc(Y.J)&&pc(Mc)}}if(!Y)throw Error("No strategyState created!");var Nc=Y;I(V).ss=Nc;var Oc=V,Pc=Y,Qc=Pc.J;if(p(Qc)){var Rc=U[Qc];Qc&&Rc&&(Pc.I=new Rc(Oc))}var tc=V,uc=ba(yc,X,tc),Sc=ba(xc,tc);switch(tc.document.readyState){case "complete":uc();break;case "interactive":Sc();
+vc();break;default:var Tc=tc,Uc=pb(Tc);Uc.loaded||(Uc.onload=zc);rc=Tc.setInterval(zc,10);vc(Sc)}}catch(a){bb(X,$a(new W(0),a))};})();
+</script><script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/nsc_002.js"></script><script type="text/javascript">window.newShareCountsAuto="smart";</script>
+
+<!-- -->
+<!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4137023140753128",
+          enable_page_level_ads: true
+     });
+</script> -->
+<!-- -->
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/main_es.js"></script><style type="text/css"></style><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/services.css"><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style><script type="text/javascript" charset="UTF-8" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/element_main.js"></script><style type="text/css">a.newsharecounts-counter,a.newsharecounts-counter:focus,a.newsharecounts-counter:hover{text-decoration:none;color:#000;}.newsharecounts-counter{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:inline-block;vertical-align:top;position:relative;height:20px;margin-bottom:5px;padding:0 8px;font:400 14px/18px Helvetica,sans-serif;content:attr(data-count);text-align:center;color:#8a8a8a;background-color:#fff;border-radius:4px;border:1px solid #a0a0a0;box-shadow:0}.newsharecounts-counter[data-size=large]{height:28px;line-height:26px;}.newsharecounts-counter[data-dir=top],.newsharecounts-counter[data-dir=bottom]{height:36px;line-height:34px;}.newsharecounts-counter[data-dir]:after,.newsharecounts-counter[data-dir]:before{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;display:block;content:"";position:absolute;margin:auto;height:0;width:0;pointer-events:none;border:5px solid transparent}.newsharecounts-counter[data-dir=top]:after,.newsharecounts-counter[data-dir=top]:before,.newsharecounts-counter[data-dir=bottom]:after,.newsharecounts-counter[data-dir=bottom]:before{left:0;right:0}.newsharecounts-counter[data-dir=left]:after,.newsharecounts-counter[data-dir=left]:before,.newsharecounts-counter[data-dir=right]:after,.newsharecounts-counter[data-dir=right]:before{top:0;bottom:0}.newsharecounts-counter[data-dir=top]:after{top:-9px;border-bottom-color:#fff}.newsharecounts-counter[data-dir=top]:before{top:-10px;border-bottom-color:#a0a0a0}.newsharecounts-counter[data-dir=bottom]:after{bottom:-9px;border-top-color:#fff}.newsharecounts-counter[data-dir=bottom]:before{bottom:-10px;border-top-color:#a0a0a0}.newsharecounts-counter[data-dir=left]:after{left:-9px;border-right-color:#fff}.newsharecounts-counter[data-dir=left]:before{left:-10px;border-right-color:#a0a0a0}.newsharecounts-counter[data-dir=right]:after{right:-9px;border-left-color:#fff}.newsharecounts-counter[data-dir=right]:before{right:-10px;border-left-color:#a0a0a0}.newsharecounts-auto{display:none}</style></head><body id="child-theme" class="post-template-default single single-post postid-2954 single-format-standard singular singular-post singular-post-2954" style="height: calc(100% - 200px); position: relative; min-height: 100%; top: 40px; overflow: visible;"><div style="" class="skiptranslate"><iframe id=":2.container" class="goog-te-banner-frame skiptranslate" src="javascript:''" style="visibility:visible" frameborder="0"></iframe></div>
+	<a class="skip-content" href="#main">Skip to content</a>
+	<header class="site-header" id="site-header" role="banner">
+		<div id="title-info" class="title-info">
+			<div class="site-title"><a href="http://makitweb.com/"><span class="screen-reader-text">Makitweb</span><img id="logo" class="logo" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/makitweblogo-1.png" alt="Makitweb" style="opacity: 1;"></a></div>		</div>
+		<button id="toggle-navigation" class="toggle-navigation"><i class="fa fa-bars"></i></button>
+<div class="menu-container menu-primary" id="menu-primary" role="navigation">
+	<ul id="menu-primary-items" class="menu-primary-items"><li id="menu-item-74" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-has-children menu-item-74"><a href="http://makitweb.com/category/php/">PHP</a>
+<ul class="sub-menu">
+	<li id="menu-item-4651" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4651"><a href="http://makitweb.com/category/php/codeigniter/">CodeIgniter</a></li>
+	<li id="menu-item-4652" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4652"><a href="http://makitweb.com/category/php/laravel/">Laravel</a></li>
+	<li id="menu-item-4653" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4653"><a href="http://makitweb.com/category/php/wordpress/">WordPress</a></li>
+</ul>
+</li>
+<li id="menu-item-131" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-131"><a href="http://makitweb.com/category/ajax/">AJAX</a></li>
+<li id="menu-item-75" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-75"><a href="http://makitweb.com/category/javascript/">JavaScript</a></li>
+<li id="menu-item-76" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-76"><a href="http://makitweb.com/category/jquery/">JQuery</a></li>
+<li id="menu-item-425" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-425"><a href="http://makitweb.com/category/angularjs/">AngularJS</a></li>
+<li id="menu-item-4063" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4063"><a href="http://makitweb.com/category/vue-js/">Vue.js</a></li>
+<li id="menu-item-278" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-278"><a href="http://makitweb.com/category/python/">Python</a></li>
+<li id="menu-item-499" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-499"><a href="http://makitweb.com/category/database/">DataBase</a></li>
+<li id="menu-item-2740" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-2740"><a href="http://makitweb.com/category/phonegap/">Phonegap</a></li>
+<li id="menu-item-441" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-441"><a href="http://makitweb.com/category/how-to/">How To</a></li>
+<li id="menu-item-193" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"><a href="http://makitweb.com/contact/">Contact</a></li>
+</ul><ul class="social-media-icons visible">				<li>
+					<a class="twitter" target="_blank" href="https://twitter.com/yssyogesh_singh">
+						<i class="fa fa-twitter-square" title="twitter"></i>
+						<span class="screen-reader-text">twitter</span>
+					</a>
+				</li>
+								<li>
+					<a class="facebook" target="_blank" href="https://www.facebook.com/makitweb/">
+						<i class="fa fa-facebook-square" title="facebook"></i>
+						<span class="screen-reader-text">facebook</span>
+					</a>
+				</li>
+								<li>
+					<a class="google-plus" target="_blank" href="https://plus.google.com/+YogeshSinghmakitweb">
+						<i class="fa fa-google-plus-square" title="google-plus"></i>
+						<span class="screen-reader-text">google-plus</span>
+					</a>
+				</li>
+								<li>
+					<a class="linkedin" target="_blank" href="https://in.linkedin.com/in/yogesh-singh-b1ba3392">
+						<i class="fa fa-linkedin-square" title="linkedin"></i>
+						<span class="screen-reader-text">linkedin</span>
+					</a>
+				</li>
+								<li>
+					<a class="email" target="_blank" href="mailto:yogesh@makitweb.com">
+						<i class="fa fa-envelope" title="email"></i>
+						<span class="screen-reader-text">email</span>
+					</a>
+				</li>
+			</ul></div>	</header>
+	<div id="overflow-container" class="overflow-container">
+		<div id="breadcrumbs" class="breadcrumb-trail breadcrumbs"><span class="item-home"><a class="bread-link bread-home" href="http://makitweb.com/" title="Home">Home</a></span><span class="separator"> &gt; </span><span class="item-cat"><a href="http://makitweb.com/category/phonegap/">Phonegap</a></span><span class="separator"> &gt; </span><span class="item-current item-2954"><span class="bread-current bread-2954" title="Capture and Upload photo to server with PhoneGap">Capture and Upload photo to server with PhoneGap</span></span></div>		<div id="main" class="main" role="main">	<div id="loop-container" class="loop-container">
+			<div class="post-2954 post type-post status-publish format-standard hentry category-phonegap entry">
+					<div class="entry-meta-top">
+		Last updated on June 22nd, 2017 by <a href="http://makitweb.com/author/admin/" title="Posts by Yogesh Singh" rel="author">Yogesh Singh</a>	</div>
+		<div class="entry-header">
+			<h1 class="entry-title">Capture and Upload photo to server with PhoneGap</h1>
+		</div>
+		<div class="entry-content frizzly_container">
+			<article>
+				<input class="frizzly" type="hidden"><p>File Transfer plugin allows to upload&nbsp;photo or files to the remote server from the PhoneGap app.</p>
+<p>In this tutorial, I am using Camera plugin to take a photo from 
+camera or gallery. It will return response either in base64 format or 
+path. You can use <a href="http://makitweb.com/how-to-upload-image-file-using-ajax-and-jquery/" target="_blank" rel="noopener">jQuery AJAX</a> to upload photo in base64 format.</p>
+<div style="text-align: center; width: 100%; height: auto; clear: none;" class="googlepublisherpluginad"><ins style="display: block; margin: 24px auto; background-color: transparent;" data-ad-format="auto" class="adsbygoogle" data-ad-client="ca-pub-4137023140753128" data-ad-slot="6812155299" data-ad-channel="WordPressSinglePost+pso-lv-9" data-adsbygoogle-status="reserved"></ins></div><p>But
+ it is not the better way because it works well when the image quality 
+is low but when the image is taken from better camera device or photo 
+quality is good then it increases the image size and takes a longer time
+ to process, crash the app, slow down the device.</p>
+<p>While adding File transfer plugin it will automatically download File plugin also that use to manipulate files in the device.</p>
+<p>In the demonstration, I am creating a basic app where upload the selected photo to the server.</p>
+<p><a href="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/choose-an-image-from-camera-or-gallery-phonegap-2/" rel="attachment wp-att-2958" class="single-image-gallery"><img data-attachment-id="2958" data-permalink="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/choose-an-image-from-camera-or-gallery-phonegap-2/" data-orig-file="https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?fit=1920%2C1080" data-orig-size="1920,1080" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Choose an image from camera or gallery – PhoneGap" data-image-description="" data-medium-file="https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?fit=300%2C169" data-large-file="https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?fit=1024%2C576" class="aligncenter size-full wp-image-2958" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg" alt="Capture and Upload photo to server with PhoneGap" srcset="https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?w=1920 1920w, https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?resize=300%2C169 300w, https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?resize=768%2C432 768w, https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg?resize=1024%2C576 1024w" sizes="(max-width: 1000px) 100vw, 1000px" data-frizzly-image-share-pinterest="http://pinterest.com/pin/create/bookmarklet/?is_video=false&amp;url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;media=http%3A%2F%2Fmakitweb.com%2Fwp-content%2Fuploads%2F2017%2F06%2FChoose-an-image-from-camera-or-gallery-PhoneGap-1.jpg&amp;description=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap" data-frizzly-image-share-facebook="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F" data-frizzly-image-share-twitter="https://twitter.com/share?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;text=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap&amp;via=" data-frizzly-image-post-id="2954" style="opacity: 1;" data-frizzly-indexer="0" width="846" height="476"></a><br>
+<span id="more-2954"></span></p>
+<div class="mkdiv_demo"><a href="http://demo.makitweb.com/phonegap_camera/uploadFile.apk" target="_blank" rel="noopener noreferrer">Demo App</a>&nbsp;<a href="http://demo.makitweb.com/phonegap_camera/capture-and-upload-photo-to-server-with-phonegap.zip" target="_blank" rel="noopener noreferrer">Download</a></div>
+<hr class="hr">
+<h1 class="content-title">Contents</h1>
+<ol class="olcontent">
+<li><a href="#plugin">Add plugin</a></li>
+<li><a href="#php">PHP</a></li>
+<li><a href="#implementation">Plugin Implementation</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ol>
+<hr class="hr">
+<p>&nbsp;</p>
+<h1 id="plugin" class="content-title"><span class="number">1. </span>Add plugin</h1>
+<ul>
+<li>Create a PhoneGap <a href="http://makitweb.com/make-android-app-with-phonegap-build/" target="_blank" rel="noopener">project </a>and add platform in it.</li>
+</ul>
+<pre>F:\phonegap&gt;cordova create myapp
+F:\phonegap&gt;cd myapp
+F:\phonegap\myapp&gt;cordova platform add android --save</pre>
+<ul>
+<li>Now add file transfer plugin to the project.</li>
+</ul>
+<pre>F:\phonegap&gt;myapp&gt;cordova plugin add cordova-plugin-file-transfer</pre>
+<ul>
+<li>Copy the <code>plugins</code> directory from&nbsp;<code>platforms/android/platform_www/</code> to <code>www/</code> directory.</li>
+</ul>
+<p><strong>config.xml</strong></p>
+<p>Specify the preference and plugin in <code>config.xml</code>.</p>
+<pre>&lt;preference name="AndroidPersistentFileLocation" value="Compatibility" /&gt;
+&lt;plugin name="cordova-plugin-file-transfer" spec="1" /&gt;</pre>
+<hr class="hr">
+<p>&nbsp;</p>
+<h1 id="php" class="content-title"><span class="number">2. </span>PHP</h1>
+<p>Create a <code>upload</code> directory to store images and a <code>upload.php</code> file.</p>
+<p>Generate a new name and store the file to <code>upload</code> directory.</p>
+<p><strong>Completed Code</strong></p>
+<pre>&lt;?php
+
+// Set new file name
+$new_image_name = "newimage_".mt_rand().".jpg";
+
+// upload file
+move_uploaded_file($_FILES["file"]["tmp_name"], 'upload/'.$new_image_name);
+echo $new_image_name ;</pre>
+<hr class="hr">
+<p>&nbsp;</p>
+<h1 id="implementation" class="content-title"><span class="number">3. </span>Plugin Implementation</h1>
+<div style="text-align: center; width: 100%; height: auto; clear: none;" class="googlepublisherpluginad"><ins style="display: block; margin: 24px auto; background-color: transparent;" data-ad-format="auto" class="adsbygoogle" data-ad-client="ca-pub-4137023140753128" data-ad-slot="8288888497" data-ad-channel="WordPressSinglePost+pso-lv-9" data-adsbygoogle-status="reserved"></ins></div><p>When an image is successfully selected from the device either by camera or gallery then show image preview by changing the <code>&lt;img&gt;</code> source and upload photo by calling <code>upload()</code> method from FileTransfer object.</p>
+<p>In the method pass image path and server file URL&nbsp;for upload handling,</p>
+<p><strong>Completed Code</strong></p>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&nbsp; &nbsp; &lt;head&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;meta charset="UTF-8"&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'" /&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;title&gt;PhoneGap app&lt;/title&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;!-- Script --&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;script type="text/javascript" src="cordova.js" &gt;&lt;/script&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;script type='text/javascript' src='jquery-3.0.0.js' &gt;&lt;/script&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;script type='text/javascript'&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; $(document).ready(function(){
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // take picture from camera
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $('#but_take').click(function(){ &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; navigator.camera.getPicture(onSuccess, onFail, { quality: 20,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; destinationType: Camera.DestinationType.FILE_URL&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // upload select&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $("#but_select").click(function(){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; navigator.camera.getPicture(onSuccess, onFail, { quality: 50,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sourceType: Camera.PictureSourceType.PHOTOLIBRARY,&nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; allowEdit: true,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; destinationType: Camera.DestinationType.FILE_URI
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; });
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Change image source and upload photo to server
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; function onSuccess(imageURI) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; // Set image source
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var image = document.getElementById('img');
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; image.src = imageURI&nbsp; + '?' + Math.random();
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var options = new FileUploadOptions();
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options.fileKey = "file";
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options.mimeType = "image/jpeg";
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var params = {};
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; params.value1 = "test";
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; params.value2 = "param";
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options.params = params;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; options.chunkedMode = false;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; var ft = new FileTransfer();
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ft.upload(imageURI, "http://demo.makitweb.com/phonegap_camera/upload.php", function(result){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert('successfully uploaded ' + result.response);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, function(error){
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert('error : ' + JSON.stringify(error));
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }, options);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; function onFail(message) {
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alert('Failed because: ' + message);
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }
+&nbsp; &nbsp; &nbsp; &nbsp; });
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/script&gt;
+&nbsp; &nbsp; &lt;/head&gt;
+&nbsp; &nbsp; &lt;body&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style="margin:0 auto; width:30%!important;text-align: center;"&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="img/cam2.jpg" id='img' style="width: 100px; height: 100px;"&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;&lt;br/&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;div style="width:100%; text-align:center; padding:10px;"&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button id='but_take'&gt;Take photo&lt;/button&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;button id='but_select'&gt;Select photo from Gallery&lt;/button&gt;
+&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+&nbsp; &nbsp; &lt;/body&gt;
+&lt;/html&gt;</pre>
+<div class="mkdiv_demo"><a href="http://demo.makitweb.com/phonegap_camera/uploadFile.apk" target="_blank" rel="noopener noreferrer">Demo App</a></div>
+<hr class="hr">
+<p>&nbsp;</p>
+<h1 id="conclusion" class="content-title"><span class="number">4. </span>Conclusion</h1>
+<p>This post is continuity of the <a href="http://makitweb.com/choose-an-image-from-camera-or-gallery-phonegap/" target="_blank" rel="noopener">previous post</a> where I showed how you can capture photo from camera and select image from the photo gallery.</p>
+<p>With File Transfer plugin you can upload any type of files to the server.</p>
+<!-- Begin Yuzo --><div class="yuzo_related_post style-1" data-version="5.12.74"><!-- with result --><div class="yuzo_clearfixed yuzo__title"><h3>Related Post</h3></div><div class="yuzo_wraps">
+						  <div class="relatedthumb relatedpost-2710" style="width: 126.5px; float: left; overflow: hidden; height: 172px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="http://makitweb.com/make-android-app-with-phonegap-build/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://i2.wp.com/makitweb.com/wp-content/uploads/2017/04/phonegap-project-build-1.png?resize=150%2C150') 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">Make android app with PhoneGap Build</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-2938" style="width: 126.5px; float: left; overflow: hidden; height: 172px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="http://makitweb.com/choose-an-image-from-camera-or-gallery-phonegap/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap.jpg?resize=150%2C150') 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">Choose an image from Camera or Gallery – Pho...</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-2811" style="width: 126.5px; float: left; overflow: hidden; height: 172px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="http://makitweb.com/add-plugin-to-the-android-app-phonegap/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://i2.wp.com/makitweb.com/wp-content/uploads/2017/05/upload-phonegap-app.png?resize=150%2C150') 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">Add plugin to the Android app – PhoneGap</span>
+							  
+							  
+							  </a>
+
+						  </span></div>
+						  <div class="relatedthumb relatedpost-2836" style="width: 126.5px; float: left; overflow: hidden; height: 172px;"><span class="equalizer-inner" style="display:block;">  
+							  
+							  <a href="http://makitweb.com/storing-data-locally-in-a-phonegap-app-with-sqlite/">
+									  <div class="yuzo-img-wrap " style="/*width: 126.5px;height:88px;*/">
+										
+										<div class="yuzo-img" style="background:url('https://i0.wp.com/makitweb.com/wp-content/uploads/2017/06/Storing-Data-Locally-in-a-PhoneGap-App-with-SQLite.jpg?resize=150%2C150') 50% 50% no-repeat;width: 126.5px;;max-width:100%;height:88px;margin-bottom: 5px;background-size: cover; "></div>
+									  </div>
+									  
+								   <span class="yuzo__text--title" style="font-size:13px;">Storing Data Locally in a PhoneGap App with SQLite</span>
+							  
+							  
+							  </a>
+
+						  </span></div></div> <!-- end wrap -->
+</div> <style>
+								.yuzo_related_post img{width:126.5px !important; height:88px !important;}
+								.yuzo_related_post .relatedthumb{line-height:15px;background: !important;color:!important;}
+								.yuzo_related_post .relatedthumb:hover{background:#fcfcf4 !important; -webkit-transition: background 0.2s linear; -moz-transition: background 0.2s linear; -o-transition: background 0.2s linear; transition: background 0.2s linear;;color:!important;}
+								.yuzo_related_post .relatedthumb a{color:!important;}
+								.yuzo_related_post .relatedthumb a:hover{ color:}!important;}
+								.yuzo_related_post .relatedthumb:hover a{ color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo__text--title{ color:!important;}
+								.yuzo_related_post .yuzo_text, .yuzo_related_post .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb:hover .yuzo_text, .yuzo_related_post:hover .yuzo_views_post {color:!important;}
+								.yuzo_related_post .relatedthumb{  margin: 0px  0px  0px  0px;   padding: 5px  5px  5px  5px;  }
+								
+								</style> <script>
+						  jQuery(document).ready(function( $ ){
+							jQuery('.yuzo_related_post .yuzo_wraps').equalizer({ columns : '> div' });
+						   });
+						  </script> <!-- End Yuzo :) --><div class="heateorSssClear"></div><div class="heateor_sss_sharing_container heateor_sss_horizontal_sharing" heateor-sss-data-href="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/"><div class="heateor_sss_sharing_title" style="font-weight:bold">Spread the love</div><ul class="heateor_sss_sharing_ul"><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" alt="Facebook" title="Facebook" class="heateorSssSharing heateorSssFacebookBackground" onclick='heateorSssPopup("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssFacebookSvg"></ss></i></li><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" alt="Twitter" title="Twitter" class="heateorSssSharing heateorSssTwitterBackground" onclick='heateorSssPopup("http://twitter.com/intent/tweet?via=yssyogesh_singh&amp;text=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap&amp;url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssTwitterSvg"></ss></i></li><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" alt="Google plus" title="Google plus" class="heateorSssSharing heateorSssGoogleplusBackground" onclick='heateorSssPopup("https://plus.google.com/share?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssGoogleplusSvg"></ss></i></li><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" alt="Linkedin" title="Linkedin" class="heateorSssSharing heateorSssLinkedinBackground" onclick='heateorSssPopup("http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;title=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssLinkedinSvg"></ss></i></li><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" alt="Pinterest" title="Pinterest" class="heateorSssSharing heateorSssPinterestBackground" onclick="javascript:void( (function() {var e=document.createElement('script' );e.setAttribute('type','text/javascript' );e.setAttribute('charset','UTF-8' );e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());"><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssPinterestSvg"></ss></i></li><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" alt="Pocket" title="Pocket" class="heateorSssSharing heateorSssPocketBackground" onclick='heateorSssPopup("https://readitlaterlist.com/save?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;title=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssPocketSvg"></ss></i></li><li class="heateorSssSharingRound"><i style="width:35px;height:35px;border-radius:999px;" title="More" alt="More" class="heateorSssSharing heateorSssMoreBackground" onclick="heateorSssMoreSharingPopup(this, 'http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/', 'Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap', '' )"><ss style="display:block" class="heateorSssSharingSvg heateorSssMoreSvg"></ss></i></li></ul><div class="heateorSssClear"></div></div><div class="heateorSssClear"></div><div class="heateor_sss_sharing_container heateor_sss_vertical_sharing" style="width:44px;left: -10px;top: 100px;-webkit-box-shadow:none;box-shadow:none;" heateor-sss-data-href="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/"><ul class="heateor_sss_sharing_ul"><li class="heateorSssSharingRound"><i style="width:40px;height:40px;border-radius:999px;" alt="Facebook" title="Facebook" class="heateorSssSharing heateorSssFacebookBackground" onclick='heateorSssPopup("https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssFacebookSvg"></ss><ss class="heateor_sss_square_count heateor_sss_facebook_count">&nbsp;</ss></i></li><li class="heateorSssSharingRound"><i style="width:40px;height:40px;border-radius:999px;" alt="Twitter" title="Twitter" class="heateorSssSharing heateorSssTwitterBackground" onclick='heateorSssPopup("http://twitter.com/intent/tweet?via=yssyogesh_singh&amp;text=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap&amp;url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F")'><ss style="display:block;border-radius:999px;float:left;" class="heateorSssSharingSvg heateorSssTwitterSvg"></ss><ss class="heateor_sss_square_count heateor_sss_twitter_count" style="visibility:visible;display:block;">2</ss></i></li><li class="heateorSssSharingRound"><i style="width:40px;height:40px;border-radius:999px;" alt="Google plus" title="Google plus" class="heateorSssSharing heateorSssGoogleplusBackground" onclick='heateorSssPopup("https://plus.google.com/share?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssGoogleplusSvg"></ss><ss class="heateor_sss_square_count heateor_sss_google_plus_count">&nbsp;</ss></i></li><li class="heateorSssSharingRound"><i style="width:40px;height:40px;border-radius:999px;" alt="Linkedin" title="Linkedin" class="heateorSssSharing heateorSssLinkedinBackground" onclick='heateorSssPopup("http://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;title=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssLinkedinSvg"></ss><ss class="heateor_sss_square_count heateor_sss_linkedin_count">&nbsp;</ss></i></li><li class="heateorSssSharingRound"><i style="width:40px;height:40px;border-radius:999px;" alt="Pinterest" title="Pinterest" class="heateorSssSharing heateorSssPinterestBackground" onclick="javascript:void( (function() {var e=document.createElement('script' );e.setAttribute('type','text/javascript' );e.setAttribute('charset','UTF-8' );e.setAttribute('src','//assets.pinterest.com/js/pinmarklet.js?r='+Math.random()*99999999);document.body.appendChild(e)})());"><ss style="display:block;border-radius:999px;float:left;" class="heateorSssSharingSvg heateorSssPinterestSvg"></ss><ss class="heateor_sss_square_count heateor_sss_pinterest_count" style="visibility:visible;display:block;">1</ss></i></li><li class="heateorSssSharingRound"><i style="width:40px;height:40px;border-radius:999px;" alt="Pocket" title="Pocket" class="heateorSssSharing heateorSssPocketBackground" onclick='heateorSssPopup("https://readitlaterlist.com/save?url=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F&amp;title=Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap")'><ss style="display:block;border-radius:999px;" class="heateorSssSharingSvg heateorSssPocketSvg"></ss><ss class="heateor_sss_square_count heateor_sss_Pocket_count">&nbsp;</ss></i></li><li class="heateorSssSharingRound"><ss class="heateor_sss_square_count">&nbsp;</ss><i style="width:40px;height:40px;border-radius:999px;" title="More" alt="More" class="heateorSssSharing heateorSssMoreBackground" onclick="heateorSssMoreSharingPopup(this, 'http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/', 'Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap', '' )"><ss style="display:block" class="heateorSssSharingSvg heateorSssMoreSvg"></ss></i></li></ul><div class="heateorSssClear"></div><div title="Hide" style="float:left" onclick="heateorSssHideSharing(this, 'heateorSssPullOut', 'heateorSssPushIn','Left', 'left')" class="heateorSssSharingArrow heateorSssPullOut"></div></div>							</article>
+		</div>
+		<div class="entry-meta-bottom">
+			<nav class="further-reading">
+	<p class="prev">
+		<span>Previous Post</span>
+		<a href="http://makitweb.com/choose-an-image-from-camera-or-gallery-phonegap/">Choose an image from Camera or Gallery – PhoneGap</a>
+	</p>
+	<p class="next">
+		<span>Next Post</span>
+		<a href="http://makitweb.com/autocomplete-data-on-multiple-fields-with-jquery-and-ajax/">How to autocomplete data on multiple fields with jQuery and AJAX</a>
+	</p>
+</nav>			<div class="author-meta">
+	<img alt="Yogesh Singh" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/shade.gif" srcset="http://1.gravatar.com/avatar/75f05ef7c18d24b92bdc4099b2a98963?s=144&amp;d=mm&amp;r=g 2x" class="avatar avatar-72 photo" imageholder="http://1.gravatar.com/avatar/75f05ef7c18d24b92bdc4099b2a98963?s=72&amp;d=mm&amp;r=g" width="72" height="72">	<div class="name-container">
+		<h4>
+			<a href="http://makitweb.com/">Yogesh Singh</a>		</h4>
+	</div>
+	<p style="display: none;">
+		
+	</p>
+Yogesh Singh is a web developer and founder of makitweb .
+
+He mainly blogs about PHP, AJAX, JavaScript, jQuery, AngularJS, Database, Python, and something that interest him.</div>			<div class="entry-categories"><p><i class="fa fa-folder-open"></i><a href="http://makitweb.com/category/phonegap/" title="View all posts in Phonegap">Phonegap</a></p></div>					</div>
+	</div>
+	
+	<section id="comments" class="comments">
+		<div class="comments-number">
+			<h2>
+				One Comment			</h2>
+		</div>
+		<ol class="comment-list">
+					<li class="comment even thread-even depth-1 avatars" id="li-comment-644">
+		<article id="comment-644" class="comment">
+			<div class="comment-author">
+				<img alt="" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/shade.gif" srcset="http://0.gravatar.com/avatar/fd1d509d6c2070f83422cb89e9ff7332?s=96&amp;d=mm&amp;r=g 2x" class="avatar avatar-48 photo" imageholder="http://0.gravatar.com/avatar/fd1d509d6c2070f83422cb89e9ff7332?s=48&amp;d=mm&amp;r=g" width="48" height="48">				<span class="author-name">Phil Ponce</span>
+				<span> said:</span>
+			</div>
+			<div class="comment-content">
+								<p>Hello Yogesh – I’m trying to upload a photo to a server via 
+Cordova Tools in VS2017.  I’ve hit a wall and am curious what the “best 
+practice” is.  I’m using AZURE and have established a blob storage but 
+I’m totally confused with all the documentation.  I have my own web 
+server and would prefer to use that for image storage.  Have you any 
+advice on how best to move forward?</p>
+			</div>
+			<div class="comment-meta">
+				<div class="comment-date">December 3, 2017</div>
+								<a rel="nofollow" class="comment-reply-link" href="#comment-644" onclick='return addComment.moveForm( "comment-644", "644", "respond", "2954" )' aria-label="Reply to Phil Ponce">Reply</a>			</div>
+		</article>
+		</li><!-- #comment-## -->
+		</ol>
+					<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="http://makitweb.com/capture-and-upload-photo-to-server-with-phonegap/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="http://makitweb.com/wp-comments-post.php" method="post" id="commentform" class="comment-form anti-spam-form-processed" novalidate="">
+				<p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p><p class="comment-form-comment">
+                <label for="comment" class="screen-reader-text">Your Comment</label>
+                <textarea required="" placeholder="Enter Your Comment…" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
+            </p><p class="comment-form-author">
+                <label for="author" class="screen-reader-text">Your Name</label>
+                <input placeholder="Your Name*" id="author" name="author" size="30" aria-required="true" type="text">
+            </p>
+<p class="comment-form-email">
+                <label for="email" class="screen-reader-text">Your Email</label>
+                <input placeholder="Your Email*" id="email" name="email" size="30" aria-required="true" type="email">
+            </p>
+<p class="comment-form-url">
+                <label for="url" class="screen-reader-text">Your Website URL</label>
+                <input placeholder="Your URL (optional)" id="url" name="url" size="30" type="url">
+                </p>
+<p class="form-submit"><input name="submit" id="submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="2954" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p>		<p class="antispam-group antispam-group-q" style="clear: both; display: none;">
+			<label>Current ye@r <span class="required">*</span></label>
+			<input name="antspm-a" class="antispam-control antispam-control-a" value="2018" type="hidden">
+			<input name="antspm-q" class="antispam-control antispam-control-q" value="2018" autocomplete="off" type="text">
+		</p>
+		<p class="antispam-group antispam-group-e" style="display: none;">
+			<label>Leave this field empty</label>
+			<input name="antspm-e-email-url-website" class="antispam-control antispam-control-e" autocomplete="off" type="text">
+		</p>
+<p class="comment-subscription-form"><input name="subscribe_comments" id="subscribe_comments" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe_comments">Notify me of follow-up comments by email.</label></p><p class="comment-subscription-form"><input name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto; -moz-appearance: checkbox; -webkit-appearance: checkbox;" type="checkbox"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog">Notify me of new posts by email.</label></p>			<input name="antspm-d" class="antispam-control antispam-control-d" value="2018" type="hidden"></form>
+			</div><!-- #respond -->
+		</section>
+		</div>
+</div><!-- .main -->
+	<aside id="sidebar-primary-container" class="sidebar-primary-container">
+		<h1 class="screen-reader-text">Primary Sidebar</h1>
+		<div class="sidebar sidebar-primary" id="sidebar-primary" role="complementary">
+			<section id="search-2" class="widget widget_search"><div class="search-form-container">
+	<form role="search" method="get" class="search-form" action="http://makitweb.com/">
+		<label class="screen-reader-text">Search for:</label>
+		<input class="search-field" placeholder="Search..." name="s" title="Search for:" type="search">
+		<input class="search-submit" value="Go" type="submit">
+	</form>
+</div></section>		<section id="recent-posts-2" class="widget widget_recent_entries">		<h2 class="widget-title">Recent Posts</h2>		<ul>
+											<li>
+					<a href="http://makitweb.com/how-to-send-ajax-request-from-wordpress-theme/">How to send AJAX request from WordPress theme</a>
+									</li>
+											<li>
+					<a href="http://makitweb.com/copy-text-to-clipboard-using-vue-clipboard2-vue-js/">Copy text to Clipboard using vue-clipboard2 – Vue.js</a>
+									</li>
+											<li>
+					<a href="http://makitweb.com/how-to-create-and-load-model-in-laravel/">How to Create and Load Model in Laravel</a>
+									</li>
+											<li>
+					<a href="http://makitweb.com/check-username-availability-with-vue-js-and-php/">Check Username Availability with Vue.js and PHP</a>
+									</li>
+											<li>
+					<a href="http://makitweb.com/insert-update-delete-records-from-mysql-with-vue-js/">Insert Update and Delete records from MySQL with Vue.js</a>
+									</li>
+					</ul>
+		</section><section id="categories-2" class="widget widget_categories"><h2 class="widget-title">Categories</h2>		<ul>
+	<li class="cat-item cat-item-9"><a href="http://makitweb.com/category/ajax/">AJAX</a>
+</li>
+	<li class="cat-item cat-item-18"><a href="http://makitweb.com/category/angularjs/">AngularJS</a>
+</li>
+	<li class="cat-item cat-item-33"><a href="http://makitweb.com/category/php/codeigniter/">CodeIgniter</a>
+</li>
+	<li class="cat-item cat-item-20"><a href="http://makitweb.com/category/database/">DataBase</a>
+</li>
+	<li class="cat-item cat-item-19"><a href="http://makitweb.com/category/how-to/">How To</a>
+</li>
+	<li class="cat-item cat-item-3"><a href="http://makitweb.com/category/javascript/">Javascript</a>
+</li>
+	<li class="cat-item cat-item-4"><a href="http://makitweb.com/category/jquery/">JQuery</a>
+</li>
+	<li class="cat-item cat-item-35"><a href="http://makitweb.com/category/php/laravel/">Laravel</a>
+</li>
+	<li class="cat-item cat-item-10"><a href="http://makitweb.com/category/phonegap/">Phonegap</a>
+</li>
+	<li class="cat-item cat-item-2"><a href="http://makitweb.com/category/php/">PHP</a>
+</li>
+	<li class="cat-item cat-item-14"><a href="http://makitweb.com/category/python/">Python</a>
+</li>
+	<li class="cat-item cat-item-32"><a href="http://makitweb.com/category/vue-js/">Vue.js</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="http://makitweb.com/category/php/wordpress/">WordPress</a>
+</li>
+		</ul>
+</section><section id="text-2" class="widget widget_text">			<div class="textwidget"><script async="" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/adsbygoogle.js"></script>
+<!-- Category - 1 (makitweb.com) -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4137023140753128" data-ad-slot="3105138093" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async="" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/adsbygoogle.js"></script>
+<!-- Front page - 3 (makitweb.com) -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4137023140753128" data-ad-slot="8894319690" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<script async="" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/adsbygoogle.js"></script>
+<!-- Front page - 2 (makitweb.com) -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-4137023140753128" data-ad-slot="2381955696" data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+		</section>		</div>
+	</aside>
+</div><!-- .overflow-container -->
+<link href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/font-awesome_002.css" rel="stylesheet">
+<footer class="mkfooter" style="padding-top: 0;">
+
+<!-- Start -->
+<div class="container" style="margin-top: 0px; background: #36424d;">
+      <div class="subscribe-module" style="padding: 80px 0 !important;">
+<!-- Begin MailChimp Signup Form -->
+<link href="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+  #mc_embed_signup{background:#36424d; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+  #mce-EMAIL{ outline: 0px !important;background-color: #29323b !important;color: white !important;    border-color: #29323b !important;
+        padding: 11px 20px 10px !important;
+    height: auto !important;
+    padding-top: 7px !important;
+    padding-bottom: 7px !important;
+    border-radius: 3px 0 0 3px !important;
+   }
+   #mc_embed_signup label{
+          font-size: inherit;
+    color: white;
+    font-family: Open Sans,Helvetica,Arial,sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+   }
+   #mc-embedded-subscribe{
+        font-size: 15px;
+      height: auto !important;
+      background-color: #168eea !important;
+      padding-top: 5px !important;
+      padding-bottom: 5px !important;
+      font-family: Open Sans,Helvetica,Arial,sans-serif;
+   }
+  /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+     We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://makitweb.us13.list-manage.com/subscribe/post?u=c81e35014ebc447cffe552322&amp;id=6df6a2b5a6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+    <div id="mc_embed_signup_scroll">
+  <h2 style="font-family: "><label for="mce-EMAIL">Subscribe to Blog via Email</label></h2>
+  <input name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" required="" type="email">
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input name="b_c81e35014ebc447cffe552322_6df6a2b5a6" tabindex="-1" type="text"></div>
+    <div class="clear"><input value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button" type="submit"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+          </div>
+    </div>
+
+<!-- End -->
+
+       <div class="container">
+               <div class="row text-center">
+                  	<ul class="list-inline">
+                                 
+                        <li>
+                            <a href="https://www.facebook.com/makitweb/" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+                        </li>
+                                   
+                        <li>
+                            <a href="https://twitter.com/yssyogesh_singh" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+                        </li>
+                                   
+                        <li>
+                            <a href="#"><i class="fa fa-google-plus fa-2x" target="_blank"></i></a> 
+                        </li>
+                                    
+                        <li>
+                            <a href="https://in.linkedin.com/in/yogesh-singh-b1ba3392" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+                        </li>
+                                   
+                        <li>
+                            <a href="https://in.pinterest.com/yssyogesh94/makitweb/" target="_blank"><i class="fa fa-pinterest fa-2x"></i></a>
+                        </li>
+
+
+                      
+                                  
+                    </ul>
+                </div>
+                 
+                <div class="row text-center">   
+                      <ul class="menu list-inline">
+                                
+                        <li>
+                                 <a href="http://makitweb.com/">Home</a>
+                              </li>  
+                              <li>
+                                 <a href="http://makitweb.com/about/">About</a>
+                              </li>
+                                   
+                              <li>
+                                <a href="http://makitweb.com/privacy-policy/">Privacy Policy</a>
+                              </li>
+                                   
+                              <li>
+                                 <a href="http://makitweb.com/contact/">Contact</a>
+                              </li>
+                               <li>
+                                 <a href="http://makitweb.com/sitemap_index.xml">Sitemap</a>
+                              </li>
+                   
+                     </ul>
+                 </div>
+               
+           
+        </div> 
+    </footer>
+    
+    
+    <div class="copyright">
+     <div class="container">
+       	
+         <div class="row text-center">
+         	<p>© 2016-2018 Makitweb, All rights reserved</p>
+<!-- Translator script (start) -->
+<div id="google_translate_element" style="margin-bottom: 10px;"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" style="white-space: nowrap;" class="goog-te-gadget-simple"><img src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Seleccionar idioma</span><img src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/cleardot.gif" alt="" width="1" height="1"><span style="color: rgb(118, 118, 118);" aria-hidden="true">▼</span></a></span></div></div></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/element.js"></script>
+<!-- Translator script (end) -->    
+         </div>
+         
+   
+
+
+ 	   </div>
+    </div>
+    
+<footer id="site-footer" class="site-footer" role="contentinfo" style="display: none;">
+	<h1>
+		<a href="http://makitweb.com/">
+			Makitweb		</a>
+	</h1>
+		<div class="design-credit">
+        <span>
+            Copyright © 2018 Makitweb, All rights reserved.        </span>
+	</div>
+</footer>
+<style scoped="">.yuzo_related_post{}
+.yuzo_related_post .relatedthumb{}</style>	<div style="display:none">
+	<div class="grofile-hash-map-75f05ef7c18d24b92bdc4099b2a98963">
+	</div>
+	<div class="grofile-hash-map-fd1d509d6c2070f83422cb89e9ff7332">
+	</div>
+	</div>
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='http://makitweb.com/wp-content/plugins/jetpack/modules/carousel/jetpack-carousel-ie8fix.css?ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/photon.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/anti-spam-4.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/editor.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/makitweb.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"Please verify that you are not a robot."}},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/scripts.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var frizzlySettings = {"image":{"image_selector":".frizzly_container img","networks":["pinterest","facebook","twitter"],"show":"hover","button_size":"normal","button_shape":"square","button_position":"center","button_margin_top":0,"button_margin_left":0,"button_margin_right":0,"button_margin_bottom":0,"desktop_min_height":200,"desktop_min_width":200,"image_classes":"","image_classes_positive":true,"enabled_on":"[front],[home],[single],[page],[archive],[search],[category]","disabled_on":"","i18n":[]},"content":{"align":"left","where":"before_after","pinterest_behavior":"user","networks":["pinterest","facebook","twitter"],"button_size":"normal","button_shape":"square","enabled_on":"[front],[home],[single],[page],[archive],[search],[category]","disabled_on":""},"general":{"active_image":true,"active_content":false,"twitter_handle":"","add_handle_to_tweets":true,"pinterest_source":["image_title","image_alt","post_title"],"meta_open_graph":true,"meta_twitter":true,"meta_twitter_card_type":"summary_large_image","i18n":{"email_sharer":{"ajax_action":"frizzly_share_by_email","ajax_nonce":"9346264e24","ajax_url":"http:\/\/makitweb.com\/wp-admin\/admin-ajax.php","targetEmailLabel":"Send to Email Address","sourceEmailLabel":"Your Email Address","sourceNameLabel":"Your Name","button":"Send Email","unknown_error":"Unknown error. Sharing failed."}}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/frizzly.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/devicepx-jetpack.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var viewsCacheL10n = {"admin_ajax_url":"http:\/\/makitweb.com\/wp-admin\/admin-ajax.php","post_id":"2954","is_singular":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/yuzo-postviews-cache.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/jquery_002.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/wpgroho.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/production.js" async=""></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/comment-reply.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/sassy-social-share-public.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/wp-embed.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/spin.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/jquery.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"http:\/\/makitweb.com\/wp-admin\/admin-ajax.php","nonce":"843abec2a4","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"http:\/\/makitweb.com\/wp-login.php?redirect_to=http%3A%2F%2Fmakitweb.com%2Fcapture-and-upload-photo-to-server-with-phonegap%2F","blog_id":"1","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/jetpack-carousel.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var privySettings = {"business_id":"FA9A980B98B7B3B6133FDFE4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/widget.js"></script>
+<script type="text/javascript" src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/e-201818.js" async="" defer="defer"></script>
+<script type="text/javascript">
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:6.1',blog:'118152333',post:'2954',tz:'0',srv:'makitweb.com'} ]);
+	_stq.push([ 'clickTrackerInit', '118152333', '2954' ]);
+</script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/translate_24dp.png" alt="Google Traductor de Google" width="20" height="20"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugiere una traducción mejor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe class="goog-te-menu-frame skiptranslate" title="Widget de idiomas del Traductor" style="visibility: visible; box-sizing: content-box; width: 920px; height: 285px; display: none;" frameborder="0"></iframe><iframe class="goog-te-menu-frame skiptranslate" title="Widget de idiomas del Traductor" style="visibility: visible; box-sizing: content-box; width: 829px; height: 285px; display: none;" frameborder="0"></iframe><iframe class="goog-te-menu-frame skiptranslate" title="Widget de idiomas del Traductor" style="visibility: visible; box-sizing: content-box; width: 231px; height: 73px; display: none;" frameborder="0"></iframe><div class="jp-carousel-wrap jp-carousel-transitions" itemscope="" itemtype="https://schema.org/ImageGallery" style="position: fixed; top: 0px; right: 0px; bottom: 0px; left: 0px; z-index: 2147483647; overflow-x: hidden; overflow-y: auto; direction: ltr; display: none;"><div class="jp-carousel-overlay" style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; height: 1439px;"></div><div class="jp-carousel" style="position: absolute; top: 0px; bottom: 151px; left: 0px; right: 0px;"><div class="jp-carousel-slide selected" itemprop="associatedMedia" itemscope="" itemtype="https://schema.org/ImageObject" style="left: 0px; width: 1413px; height: 795px; top: 40px; position: relative; transform: translate3d(245px, 0px, 0px);"><img src="Capture%20and%20Upload%20photo%20to%20server%20with%20PhoneGap_files/Choose-an-image-from-camera-or-gallery-PhoneGap-1_002.jpg" style="width: 100%; height: 100%;" itemprop="image"></div></div><div class="jp-carousel-fadeaway"></div><div class="jp-carousel-info" style="top: 860px; left: 110px; right: 110px;"><div class="jp-carousel-photo-info" style="left: 135px; width: 1413px;"><h2 itemprop="caption description" style="display: none;"></h2></div><div class="jp-carousel-image-meta" style="float: right; margin-top: 20px; width: 250px;"><div class="jp-carousel-buttons"><a class="jp-carousel-commentlink" href="#">Comment</a></div><ul class="jp-carousel-image-exif"></ul><a class="jp-carousel-image-download" href="https://i2.wp.com/makitweb.com/wp-content/uploads/2017/06/Choose-an-image-from-camera-or-gallery-PhoneGap-1.jpg" target="_blank">View full size <span class="photo-size">1920<span class="photo-size-times">×</span>1080</span></a><div class="jp-carousel-image-map" style="display:none;"></div></div><div class="jp-carousel-left-column-wrapper" style="width: 1436px;"><div class="jp-carousel-titleanddesc" style="width: 100%; margin-top: 20px; display: block;"><div class="jp-carousel-titleanddesc-title">Choose an image from camera or gallery – PhoneGap</div></div><div id="jp-carousel-comment-form-container" style="width: 100%; margin-top: 20px; color: rgb(153, 153, 153);"><form id="jp-carousel-comment-form"><textarea name="comment" class="jp-carousel-comment-form-field jp-carousel-comment-form-textarea" id="jp-carousel-comment-form-comment-field" placeholder="Write a Comment..."></textarea><div id="jp-carousel-comment-form-submit-and-info-wrapper"><div id="jp-carousel-comment-form-commenting-as"><fieldset><label for="email">Email (Required)</label> <input name="email" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-email-field" type="text"></fieldset><fieldset><label for="author">Name (Required)</label> <input name="author" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-author-field" type="text"></fieldset><fieldset><label for="url">Website</label> <input name="url" class="jp-carousel-comment-form-field jp-carousel-comment-form-text-field" id="jp-carousel-comment-form-url-field" type="text"></fieldset></div><input name="submit" class="jp-carousel-comment-form-button" id="jp-carousel-comment-form-button-submit" value="Post Comment" type="submit"><span id="jp-carousel-comment-form-spinner">&nbsp;</span><div id="jp-carousel-comment-post-results" style=""></div></div></form></div><div class="jp-carousel-comments" style="width: 100%; bottom: 10px; margin-top: 20px; display: block;"></div><div id="jp-carousel-comments-loading" style="width: 100%; bottom: 10px; margin-top: 20px; display: none;"><span>Loading Comments...</span></div></div></div><div class="jp-carousel-next-button" style="right: 15px; display: none; position: fixed; top: 40px; bottom: 151px; width: 110px;"><span></span></div><div class="jp-carousel-previous-button" style="left: 0px; display: none; position: fixed; top: 40px; bottom: 151px; width: 110px;"><span></span></div><div class="jp-carousel-close-hint" style="position: fixed;"><span>×</span></div></div></body><!--
+Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+
+Served from: makitweb.com @ 2018-05-06 13:35:18 by W3 Total Cache
+--></html>

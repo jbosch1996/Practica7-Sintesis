@@ -1,0 +1,264 @@
+/*
+Theme Name:     Child theme
+Description:    My child theme
+Author:         Yogesh Singh
+Template:       ignite
+
+(optional values you can add: Theme URI, Author URI, Version, License, License URI, Tags, Text Domain)
+*/
+
+body,.excerpt-header .excerpt-title,.entry-header .entry-title,#comments h3,h1, h2, h3, h4, h5, h6{
+    font-family: geomanist, Helvetica, Arial !important;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"],input[type="submit"], textarea{
+font-family: geomanist, Helvetica, Arial !important;
+}
+
+.ads{
+    border: 0px solid gray !important;
+    box-shadow: 2px 2px 7px #888888;
+margin-left: 5px;
+}
+.mkdiv_demo{
+width:100%;
+text-align:center;
+margin-top:15px;margin-bottom:20px;
+}
+.mkdiv_demo a{
+padding-left:25px;padding-right:25px;
+padding-top:15px; padding-bottom:15px;
+border-radius:3px;
+background-color:#15a9ce;
+color:white !important;
+font-weight:bold;
+width:140px;
+display:inline-block;
+font-size:17px;
+text-decoration:none;
+}
+.mkdiv_demo a:hover{
+color:white;
+opacity:0.7;
+}
+.hr{
+height:2px;
+clear:both;
+background:#edeef0;
+margin:70px 0px;
+border:0px;
+
+}
+.content-title{
+font-family:sans-serif;
+}
+
+.completedCode{
+margin-top:20px;
+}
+
+.olcontent li{
+font-size:22px;
+margin-left:20px;
+letter-spacing:2px;
+}
+.olcontent li a{
+text-decoration:none;
+color:black;
+}
+
+pre{
+word-wrap:normal !important;
+white-space:pre !important;
+overflow-x:auto;
+}
+
+#text-2{
+padding: 0px !important;
+border: 0px !important;
+background: none !important;
+}
+p{
+clear: both !important;
+}
+
+.search-field{
+    padding: 5px 10px !important;
+    font-size: 16px !important;
+}
+
+.sub-menu{
+top: 4em !important;
+}
+.sub-menu li a{
+line-height: 3em !important;
+}
+@media screen and (max-width:480px){
+.mkdiv_demo a{
+width:130px;
+font-size:15px;
+}
+}
+@media screen and (max-width:390px){
+.mkdiv_demo a{
+width:121px;
+font-size:15px;
+}
+}
+
+
+/* Footer */
+.mkfooter .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 1200px)
+.mkfooter .container {
+    width: 1170px;
+}
+@media (min-width: 992px)
+.mkfooter .container {
+    width: 970px;
+}
+@media (min-width: 768px)
+.mkfooter .container {
+    width: 750px;
+}
+
+
+.search-text{
+	margin-top:50px;
+	background-color:#36424d;
+	padding-top:60px;
+	padding-bottom:60px;
+}
+	
+.search-text h2{
+	margin: 0 0 20px;
+    font-weight: 600;
+    font-family: Open Sans,Helvetica,Arial,sans-serif !important;
+}
+
+.search-text h4{
+	margin: 0 0 50px;
+    font-weight: 300;
+    font-family: Open Sans,Helvetica,Arial,sans-serif !important;
+}
+
+.search-text h2,.search-text h4{
+	color: #fff !important;
+}
+
+.search-text .input-search{
+	border-radius: 3px 0 0 3px;
+    padding: 11px 20px 10px;
+    width: calc(100% - 106px) !important;
+    background: #29323b !important;
+    border-color: #29323b !important;
+    color: #fff !important;
+    font-size: 15px !important;
+    outline: solid 0px #D9DCDF !important;
+} 
+.search-text .input-search:hover{border:1px solid #29323b;}
+.search-text .input-search:focus{border:1px solid #29323b;}
+.search-text .btn-search{
+	background-color:#168eea;
+	/*border:1px solid #FFF;*/
+	font-family:Roboto;
+	color:#FFF;
+	padding:13px 25px 13px 25px;
+	border: 0 !important;
+	border-color: #45a5ee !important;
+	border-radius: 0 3px 3px 0;
+}
+
+.search-text .btn-search:hover{
+	background-color:#45a5ee !important;
+	color:#fff;
+}
+
+.copyright{
+    background-color:#f0f0f0;
+}
+
+.copyright p{
+	font-family:Open Sans,Helvetica,Arial,sans-serif !important;
+	padding:10px 0 10px 0;
+	font-size: 13px;
+}
+
+footer{
+	background-color:#29323b;
+	min-height:200px;
+	padding:80px 0 50px 0;
+}
+
+footer .menu li a{
+	font-family:Roboto;
+	color:#b1aca1;
+	padding:10px;
+	text-decoration:none;
+}
+
+footer .menu li a:hover{
+	color:#7dabdb;
+}
+
+.fa.fa-facebook , .fa.fa-instagram, .fa.fa-google-plus , .fa.fa-github , .fa.fa-linkedin ,.fa.fa-twitter ,.fa.fa-google-plus , .fa.fa-pinterest {
+	color:#b1aca1;
+	font-size:20px;
+	padding:10px;
+	margin-bottom:50px;
+}
+
+.fa.fa-facebook:hover , .fa.fa-instagram:hover , .fa.fa-google-plus:hover  , .fa.fa-github:hover  , .fa.fa-linkedin:hover  ,.fa.fa-twitter:hover  ,.fa.fa-google-plus:hover  , .fa.fa-pinterest:hover  {
+	color:#6794c2;
+}
+
+.text-center{
+	text-align: center !important;
+}
+
+footer .list-inline {
+    padding-left: 0;
+    margin-left: -5px;
+    list-style: none;
+}
+footer .list-inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+footer .list-inline li span {
+    background: #fff;
+    color: #29323b;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 24px;
+}
+
+.icon-facebook:before {
+    content: "\e90d";
+}
+
+@media (min-width: 50em){
+.menu-primary-items a, .menu-unset ul a {
+line-height: 4.231em !important;
+}
+}
+@media (max-width: 640px){
+	.btn-search{
+		clear: both;
+		margin-top: 8px;
+	}
+	.text-center ul{
+		width: 100%;
+	}
+}
